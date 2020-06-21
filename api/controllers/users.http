@@ -25,3 +25,7 @@ Content-Type: application/json
     "user_email": "test2@test2.com",
     "user_password": "123456"
 }
+
+
+###
+POST {{base_url}}/auth/

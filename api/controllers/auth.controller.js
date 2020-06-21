@@ -23,7 +23,7 @@ function logIn (req, res) {
   UserModel
     .findOne({ email: req.body.user_email })
     .then(user => {
-      if (!user) { res.json({ error: 'Your email is incorrect!' }) } else {
+      if (!user) { res.json({ error: 'Your email and/or password are incorrect!' }) } else {
         if (bcrypt.compareSync(req.body.user_password, user.password)) {
           const userData = { username: user.username, email: user.email }
           const token = jwt.sign(userData, process.env.SECRET, { expiresIn: '1h' })
