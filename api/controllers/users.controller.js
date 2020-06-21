@@ -14,7 +14,23 @@ function getUserById (req, res) {
     .catch(err => console.error(err))
 }
 
+function createUser (req, res) {
+  UserModel
+    .create(req.body)
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
+function deleteUserById (req, res) {
+  UserModel
+    .findByIdAndDelete(req.params.id)
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
 module.exports = {
   getAllUsers,
-  getUserById
+  getUserById,
+  createUser,
+  deleteUserById
 }
