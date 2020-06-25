@@ -10,8 +10,8 @@ const {
 } = require('../controllers/users.controller')
 
 router
-  .get('/:id', getUserProfile)
   .get('/me', getOwnProfile)
+  .get('/:id', getUserProfile)
   .put('/me', editOwnProfile)
   .put('/me/photo', editPhoto)
   .delete('/me', deleteUserAccount)

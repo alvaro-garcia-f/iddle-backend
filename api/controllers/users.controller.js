@@ -1,32 +1,45 @@
 const UserModel = require('../models/users.model')
 
 // Review alll functions
-function getAllUsers (req, res) {
-  UserModel
-    .find()
-    .then(response => res.json(response))
-    .catch(err => console.error(err))
-}
 
-function getUserById (req, res) {
-  UserModel
+function getUserProfile (req, res) {
+  /*-UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err))*/
+
+  console.log(req.originalUrl)  
+}
+function getOwnProfile (req, res) {
+  /*UserModel
+  .findById(req.params.id)
+  .then(response => res.json(response))
+  .catch(err => console.error(err))*/
+
+  console.log(req.originalUrl)
 }
 
-function createUser (req, res) {
-  UserModel
-    .create(req.body)
+function editOwnProfile (req, res) {
+  /*UserModel
+    .findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then(response => res.json(response))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err))*/
+
+  
+  console.log(req.originalUrl)
 }
 
-function deleteUserById (req, res) {
-  UserModel
+function editPhoto () {
+
+}
+
+function deleteUserAccount (req, res) {
+  /*UserModel
     .findByIdAndDelete(req.params.id)
     .then(response => res.json(response))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err))*/
+
+    console.log(req.originalUrl)  
 }
 
 module.exports = {

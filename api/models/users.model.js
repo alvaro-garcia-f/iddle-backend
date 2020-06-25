@@ -1,27 +1,45 @@
 const mongoose = require('mongoose')
+const validate = require('mongoose-validator')
+
+/*const emailValidator = [
+  validate({
+    validator: 'matches',
+    arguments: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+    message: 'Please type a valid email'
+  })
+]*/
+
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Name is required']
+    default: ""    
   },
   username: {
     type: String,
-    required: [true, 'Username is required']
+    //unique: [true, 'username already exists'],
+    default: ""    
   },
   email: {
     type: String,
-    required: [true, 'Email is required']
-  },
+    required: [true, 'Email is required'],
+    lowercase: true,
+    unique: [true, 'Email already exists in our database'],
+    //validate: emailValidator
+    match: [/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, 'email not valid']
+  },  
   password: {
     type: String,
-    required: [true, 'Password is required']
+    required: [true, 'Password is required']    
   },
   about: {
-    type: String
+    type: String,
+    maxlength: [325, "max character allowed 325"],
+    default: ""
   },
   reputation: {
-    type: Number
+    type: Number,
+    default: 0
   },
   videos: [{
     type: mongoose.Schema.Types.ObjectId,
