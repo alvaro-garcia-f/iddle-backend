@@ -1,5 +1,49 @@
 # iddle-backend
 
+# DB SCHEMAS
+
+## USERS
+
+| KEY        | TYPE         | REFERENCE | REQUIRED | VALIDATION     |
+|------------|--------------|-----------|----------|----------------|
+| name       | string       |           | NO       |                |
+| username   | string       |           | YES      |                |
+| email      | string       |           | YES      | RegExp, Unique |
+| password   | string       |           | YES      |                |
+| about      | string       |           | NO       | Maxlength      |
+| reputation | number       |           | NO       |                |
+| videos     | [ ObjectId ] | Videos    | NO       |                |
+
+## VIDEOS
+
+| KEY         | TYPE         | REFERENCE | REQUIRED | VALIDATION     |
+|-------------|--------------|-----------|----------|----------------|
+| title       | string       |           | YES      |                |
+| description | string       |           | YES      |                |
+| duration    | string       |           | YES      |                |
+| author      | ObjectId     |           | YES      |                |
+| likes       | [ ObjectId ] | Users     | NO       |                |
+| views       | number       |           | NO       |                |
+| techs       | [ ObjectId ] | Techs     | YES      |                |
+| level       | string       |           | YES      |                |
+| uploadDate  | date         |           | YES      |                |
+| comments    | [ ObjectId ] | Comments  | NO       |                |
+
+## COMMENTS
+
+| KEY    | TYPE         | REFERENCE | REQUIRED | VALIDATION     |
+|--------|--------------|-----------|----------|----------------|
+| author | ObjectId     |  Users    | YES      |                |
+| text   | string       |           | YES      |                |
+
+## TECHS
+
+| KEY    | TYPE   | REFERENCE | REQUIRED | VALIDATION     |
+|--------|--------|-----------|----------|----------------|
+| name   | string |  Users    | YES      |                |
+| clicks | number |           | YES      |                |
+
+
 # API ROUTES
 
 ## AUTHENTICATION ENDPOINTS
