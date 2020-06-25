@@ -3,12 +3,12 @@ const UserModel = require('../models/users.model')
 // Review alll functions
 
 function getUserProfile (req, res) {
-  /*-UserModel
+  UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
-    .catch(err => console.error(err))*/
+    .catch(err => console.error(err))
 
-  console.log(req.originalUrl)  
+  //console.log(req.originalUrl)  
 }
 function getOwnProfile (req, res) {
   /*UserModel
@@ -20,13 +20,11 @@ function getOwnProfile (req, res) {
 }
 
 function editOwnProfile (req, res) {
-  /*UserModel
+  console.log(res.locals.user)
+  UserModel
     .findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then(response => res.json(response))
-    .catch(err => console.error(err))*/
-
-  
-  console.log(req.originalUrl)
+    .catch(err => console.error(err))  
 }
 
 function editPhoto () {

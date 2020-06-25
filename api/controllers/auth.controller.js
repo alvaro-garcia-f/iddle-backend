@@ -20,11 +20,12 @@ function signUp (req, res) {
     })
     .then(user => {
       const userData = { email: user.email }
-      const token = jwt.sign(userData, process.env.SECRET, { expiresIn: '1h' })
+      const token = jwt.sign(userData, process.env.SECRET)
       res.json({ token, ...userData })
     })
-    .catch(error => res.status(403).json({ error: error.errmsg}))
-            //handleError(error));
+    .catch(error => res.status(403).json({ error : "error" }))//error: error.errmsg
+            //handleError(error))
+            //console.log(error));
 }
 
 function logIn (req, res) {

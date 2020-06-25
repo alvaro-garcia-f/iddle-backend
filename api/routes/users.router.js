@@ -1,5 +1,5 @@
 const router = require('express').Router()
-// const { authUser } = require('../utils')
+const { authUser } = require('../utils')
 
 const {
   getUserProfile,
@@ -12,7 +12,7 @@ const {
 router
   .get('/me', getOwnProfile)
   .get('/:id', getUserProfile)
-  .put('/me', editOwnProfile)
+  .put('/me', authUser, editOwnProfile)
   .put('/me/photo', editPhoto)
   .delete('/me', deleteUserAccount)
 
