@@ -49,5 +49,5 @@ const videoSchema = new mongoose.Schema({
   comments: [commentSchema]
 })
 
-const videoModel = mongoose.model('user', videoSchema)
+const videoModel = mongoose.model('video', videoSchema)
 module.exports = videoModel

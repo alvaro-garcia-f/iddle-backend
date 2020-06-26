@@ -9,5 +9,5 @@ const techSchema = new mongoose.Schema({
   }
 })
 
-const techModel = mongoose.model('user', techSchema)
+const techModel = mongoose.model('tech', techSchema)
 module.exports = techModel
