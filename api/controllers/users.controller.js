@@ -1,5 +1,6 @@
 const UserModel = require('../models/users.model')
 
+// Review alll functions
 function getAllUsers (req, res) {
   UserModel
     .find()
@@ -29,8 +30,9 @@ function deleteUserById (req, res) {
 }
 
 module.exports = {
-  getAllUsers,
-  getUserById,
-  createUser,
-  deleteUserById
+  getUserProfile,
+  getOwnProfile,
+  editOwnProfile,
+  editPhoto,
+  deleteUserAccount
 }
