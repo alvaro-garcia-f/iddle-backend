@@ -15,7 +15,10 @@ function listVideosByTech (req, res) {
 }
 
 function listVideosByLevel (req, res) {
-
+  VideoModel
+    .find({ level: req.params.level })
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
 }
 
 function listVideosBySearch (req, res) {
@@ -23,22 +26,38 @@ function listVideosBySearch (req, res) {
 }
 
 function listVideoComments (req, res) {
-
+  VideoModel
+    .findById(req.params.videoId)
+    .then(response => res.json(response.comments))
+    .catch(err => console.error(err))
 }
 
 function uploadVideo (req, res) {
   VideoModel
     .create(req.body)
-    .then(video => { res.json(video) })
+    .then(response => { res.json(response) })
     .catch(err => console.error(err))
 }
 
 function addVideoComment (req, res) {
-
+  VideoModel
+    .findById(req.params.videoId)
+    .then(response => {
+      response.comments.push(req.body)
+      response.save()
+        .then(comment => { res.json(comment) })
+        .catch(err => console.error(err))
+    })
+    .catch(err => console.error(err))
 }
 
 function editVideoInfo (req, res) {
-
+  VideoModel
+    .findByIdAndUpdate(req.params.videoId, req.body, { new: true })
+    .then(response => {
+      res.json(response)
+    })
+    .catch(err => console.error(err))
 }
 
 function increaseVideoLikes (req, res) {
