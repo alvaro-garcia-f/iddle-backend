@@ -14,6 +14,6 @@ router
   .get('/:id', getUserProfile)
   .put('/me', authUser, editOwnProfile)
   .put('/me/photo', editPhoto)
-  .delete('/me', deleteUserAccount)
+  .delete('/me', authUser, deleteUserAccount)
 
 module.exports = router

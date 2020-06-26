@@ -29,12 +29,10 @@ function editPhoto () {
 }
 
 function deleteUserAccount (req, res) {
-  /* UserModel
-    .findByIdAndDelete(req.params.id)
+  UserModel
+    .findByIdAndDelete(res.locals.user._id)
     .then(response => res.json(response))
-    .catch(err => console.error(err)) */
-
-  console.log(req.originalUrl)
+    .catch(err => console.error(err))
 }
 
 module.exports = {
