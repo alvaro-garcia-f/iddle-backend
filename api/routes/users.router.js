@@ -10,7 +10,7 @@ const {
 } = require('../controllers/users.controller')
 
 router
-  .get('/me', getOwnProfile)
+  .get('/me', authUser, getOwnProfile)
   .get('/:id', getUserProfile)
   .put('/me', authUser, editOwnProfile)
   .put('/me/photo', editPhoto)

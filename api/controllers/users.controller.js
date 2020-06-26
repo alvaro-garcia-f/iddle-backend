@@ -8,23 +8,20 @@ function getUserProfile (req, res) {
     .then(response => res.json(response))
     .catch(err => console.error(err))
 
-  //console.log(req.originalUrl)  
+  // console.log(req.originalUrl)
 }
 function getOwnProfile (req, res) {
-  /*UserModel
-  .findById(req.params.id)
-  .then(response => res.json(response))
-  .catch(err => console.error(err))*/
-
-  console.log(req.originalUrl)
+  UserModel
+    .findById(res.locals.user._id)
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
 }
 
 function editOwnProfile (req, res) {
-  console.log(res.locals.user)
   UserModel
-    .findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .findByIdAndUpdate(res.locals.user._id, req.body, { new: true })
     .then(response => res.json(response))
-    .catch(err => console.error(err))  
+    .catch(err => console.error(err))
 }
 
 function editPhoto () {
@@ -32,12 +29,12 @@ function editPhoto () {
 }
 
 function deleteUserAccount (req, res) {
-  /*UserModel
+  /* UserModel
     .findByIdAndDelete(req.params.id)
     .then(response => res.json(response))
-    .catch(err => console.error(err))*/
+    .catch(err => console.error(err)) */
 
-    console.log(req.originalUrl)  
+  console.log(req.originalUrl)
 }
 
 module.exports = {
