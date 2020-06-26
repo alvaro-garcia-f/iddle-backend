@@ -54,9 +54,7 @@ function addVideoComment (req, res) {
 function editVideoInfo (req, res) {
   VideoModel
     .findByIdAndUpdate(req.params.videoId, req.body, { new: true })
-    .then(response => {
-      res.json(response)
-    })
+    .then(response => {res.json(response)})
     .catch(err => console.error(err))
 }
 
@@ -69,15 +67,35 @@ function increaseVideoViews (req, res) {
 }
 
 function editVideoComment (req, res) {
-
+  //console.log(req.params.commentId)
+  /*VideoModel
+    .findByIdAndUpdate(req.params.commentId, req.body, { new: true })
+    .then(response => {res.json(response)})
+    .catch(err => console.error(err))
+  console.log(req.body)  */
 }
 
 function deleteVideo (req, res) {
-
+  VideoModel
+    .findByIdAndDelete(req.params.videoId)
+    .then(response => {res.json(response)})
+    .catch(err => console.error(err))
 }
 
-function deleteVideoComment (req, res) {
-
+function deleteVideoComment (req, res) { //DELETE /videos/me/:videoId/comments/:commentId 
+  //console.log(req.params)
+  VideoModel
+    .findById(req.params.videoId)
+    .then(video => {
+      video.comments.remove(req.params.commentId)
+      video
+        .save()
+        .then(response => {
+          res.json(response)
+        })
+        .catch(err => console.error(err))
+    })
+    .catch(err => console.error(err))
 }
 
 module.exports = {
