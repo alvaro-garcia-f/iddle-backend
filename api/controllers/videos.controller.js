@@ -1,42 +1,63 @@
 const VideoModel = require('../models/videos.model')
 
-function getVideo () {
+function getVideo (req, res) {
+  VideoModel
+    .findById(req.params.videoId)
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
+function listVideosByTech (req, res) {
+  VideoModel
+    .find()
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
+}
+
+function listVideosByLevel (req, res) {
 
 }
-function listVideosByTech () {
+
+function listVideosBySearch (req, res) {
 
 }
-function listVideosByLevel () {
+
+function listVideoComments (req, res) {
 
 }
-function listVideosBySearch () {
+
+function uploadVideo (req, res) {
+  VideoModel
+    .create(req.body)
+    .then(video => { res.json(video) })
+    .catch(err => console.error(err))
+}
+
+function addVideoComment (req, res) {
 
 }
-function listVideoComments () {
+
+function editVideoInfo (req, res) {
 
 }
-function uploadVideo () {
+
+function increaseVideoLikes (req, res) {
 
 }
-function addVideoComment () {
+
+function increaseVideoViews (req, res) {
 
 }
-function editVideoInfo () {
+
+function editVideoComment (req, res) {
 
 }
-function increaseVideoLikes () {
+
+function deleteVideo (req, res) {
 
 }
-function increaseVideoViews () {
 
-}
-function editVideoComment () {
-
-}
-function deleteVideo () {
-
-}
-function deleteVideoComment () {
+function deleteVideoComment (req, res) {
 
 }
 

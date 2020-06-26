@@ -6,22 +6,25 @@ const commentSchema = new mongoose.Schema({
     ref: 'user'
   },
   text: {
-    type: String
+    type: String,
+    require: true,
+    maxlength: [325, 'max character length allowed is 325'],
+    minlength: [1, 'min character length allowed is 1']
   }
 })
 
 const videoSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, 'Name is required']
+    required: [true, 'Title is required']
   },
   description: {
     type: String,
-    required: [true, 'Username is required']
+    required: [true, 'Description is required']
   },
   duration: {
-    type: String,
-    required: [true, 'Email is required']
+    type: Number,
+    required: [true, 'Duration is required']
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
@@ -32,7 +35,8 @@ const videoSchema = new mongoose.Schema({
     ref: 'users'
   }],
   views: {
-    type: Number
+    type: Number,
+    default: 0
   },
   techs: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -40,7 +44,8 @@ const videoSchema = new mongoose.Schema({
   }],
   level: {
     type: String,
-    enum: ['newbie', 'beginner', 'intermediate', 'advance', 'expert']
+    enum: ['newbie', 'beginner', 'intermediate', 'advance', 'expert'],
+    require: true
   },
   uploadDate: {
     type: Date,
