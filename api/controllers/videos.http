@@ -40,7 +40,7 @@ Content-Type: application/json
 token: {{token}}
 
 {
-  "text": "Token test with auth"
+  "text": "Comment to be deleted!!!"
 }
 
 ###
@@ -84,7 +84,8 @@ token: {{token}}
 
 ###
 //delete video comment - delete('/me/:videoId/comments/:commentId', deleteVideoComment)
-DELETE {{base_url}}/me/5ef61fb985def66d8f6b2143/comments/5ef62fcb55448b76c8b7ac71 HTTP/1.1
+DELETE {{base_url}}/me/5ef732c7eaa7201937b840c7/comments/5ef745e930f4d024257fa906 HTTP/1.1
+token: {{token}}
 
 // CHECKING USER ROUTES
 

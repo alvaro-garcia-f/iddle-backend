@@ -115,18 +115,14 @@ function deleteVideo (req, res) {
     .catch(err => console.error(err))
 }
 
-function deleteVideoComment (req, res) { // DELETE /videos/me/:videoId/comments/:commentId
+function deleteVideoComment (req, res) {
   VideoModel
-    .findById(req.params.videoId)
-    .then(video => {
-      video.comments.remove(req.params.commentId)
-      video
-        .save()
-        .then(response => {
-          res.json(response)
-        })
-        .catch(err => console.error(err))
-    })
+    .findByIdAndUpdate(req.params.videoId, {
+      $pull: {
+        comments: { $and: [{ _id: req.params.commentId }, { userId: res.locals.user._id }] }
+      }
+    }, { new: true })
+    .then(response => res.json(response))
     .catch(err => console.error(err))
 }
 
