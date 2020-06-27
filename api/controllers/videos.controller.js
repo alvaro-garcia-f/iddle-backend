@@ -9,8 +9,9 @@ function getVideo (req, res) {
 
 function listVideosByTech (req, res) {
   VideoModel
-    .find()
-    .then(response => console.log(response))
+    .find({ techs: req.params.techId })
+    .populate('techs')
+    .then(videos => res.json(videos))
     .catch(err => console.error(err))
 }
 
