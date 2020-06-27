@@ -54,5 +54,7 @@ const videoSchema = new mongoose.Schema({
   comments: [commentSchema]
 })
 
+videoSchema.index({ title: 'text', description: 'text', level: 'text' })
+
 const videoModel = mongoose.model('video', videoSchema)
 module.exports = videoModel
