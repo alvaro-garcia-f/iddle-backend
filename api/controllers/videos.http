@@ -1,8 +1,8 @@
 @base_url = http://localhost:3000/api/videos
 
-### 
+###
 //watch a video - get('/:videoId', getVideo)
-GET {{base_url}}/5ef63ee15863d10ca4530089 HTTP/1.1
+GET {{base_url}}/5ef61fb985def66d8f6b2143 HTTP/1.1
 
 ###
 GET {{base_url}}/techs/5ef6117d291db8ed03313e3b HTTP/1.1
@@ -13,20 +13,20 @@ GET {{base_url}}/level/newbie HTTP/1.1
 
 ###
 // list video comments - get('/:videoId/comments', listVideoComments)
-GET {{base_url}}/5ef63ee15863d10ca4530089/comments HTTP/1.1
+GET {{base_url}}/5ef61fb985def66d8f6b2143/comments HTTP/1.1
 
-### 
+###
 //create a video - post('/me', uploadVideo)
 POST {{base_url}}/me HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "alberto video 3",
+  "title": "Sabado test!",
   "description": "es un test",
   "duration": 20,
   "level": "newbie"
 }
-### 
+###
 //add a video comment - post('/me/:videoId/comments', addVideoComment)
 POST {{base_url}}/me/5ef63ee15863d10ca4530089/comments HTTP/1.1
 Content-Type: application/json
@@ -36,7 +36,7 @@ Content-Type: application/json
   "text": "alb comment test 3"
 }
 
-### 
+###
 //edit video info - put('/me/:videoId', editVideoInfo)
 PUT {{base_url}}/me/5ef63ee15863d10ca4530089 HTTP/1.1
 Content-Type: application/json
@@ -46,26 +46,26 @@ Content-Type: application/json
   "duration": 25
 }
 
-### 
+###
 //edit video comment - put('/me/:videoId/comments/:commentId', editVideoComment)
-PUT {{base_url}}/me/5ef63ee15863d10ca4530089/comments/5ef641cfe989560edf1cf361 HTTP/1.1
+PUT {{base_url}}/me/5ef61fb985def66d8f6b2143/comments/5ef6304455448b76c8b7ac73 HTTP/1.1
 Content-Type: application/json
 
 {
-  "text": "editando comment test 2"
+  "text": "editando comment test"
 }
 
-### 
+###
 //delete a video - delete('/me/:videoId', deleteVideo)
-DELETE {{base_url}}/me/5ef640fc95776e0e6b9c3aa7 HTTP/1.1
+DELETE {{base_url}}/me/5ef7023d612e1884aaa6e667 HTTP/1.1
 
-### 
+###
 //delete video comment - delete('/me/:videoId/comments/:commentId', deleteVideoComment)
-DELETE {{base_url}}/me/5ef63ee15863d10ca4530089/comments/5ef649c2f217a7173e5c700c HTTP/1.1
+DELETE {{base_url}}/me/5ef61fb985def66d8f6b2143/comments/5ef62fcb55448b76c8b7ac71 HTTP/1.1
 
 // CHECKING USER ROUTES
 
-### 
+###
 GET {{base_url}}/ HTTP/1.1
 
 ###
