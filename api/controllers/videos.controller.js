@@ -23,7 +23,11 @@ function listVideosByLevel (req, res) {
 }
 
 function listVideosBySearch (req, res) {
-
+  // '/search/:term'
+  VideoModel
+    .find({ $text: { $search: req.params.term } }, { score: { $meta: 'textScore' } })
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
 }
 
 function listVideoComments (req, res) {
