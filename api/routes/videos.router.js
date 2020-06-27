@@ -1,5 +1,5 @@
 const router = require('express').Router()
-// const { authUser } = require('../utils')
+const { authUser } = require('../utils')
 
 const {
   getVideo,
@@ -23,13 +23,13 @@ router
   .get('/level/:level', listVideosByLevel)
   .get('/search/:term', listVideosBySearch)
   .get('/:videoId/comments', listVideoComments)
-  .post('/me', uploadVideo)
-  .post('/me/:videoId/comments', addVideoComment)
-  .put('/me/:videoId', editVideoInfo)
-  .put('/me/:videoId/likes', increaseVideoLikes)
+  .post('/me', authUser, uploadVideo)
+  .post('/me/:videoId/comments', authUser, addVideoComment)
+  .put('/me/:videoId', authUser, editVideoInfo)
+  .put('/me/:videoId/likes', authUser, increaseVideoLikes)
   .put('/:videoId/views', increaseVideoViews)
-  .put('/me/:videoId/comments/:commentId', editVideoComment)
-  .delete('/me/:videoId', deleteVideo)
-  .delete('/me/:videoId/comments/:commentId', deleteVideoComment)
+  .put('/me/:videoId/comments/:commentId', authUser, editVideoComment)
+  .delete('/me/:videoId', authUser, deleteVideo)
+  .delete('/me/:videoId/comments/:commentId', authUser, deleteVideoComment)
 
 module.exports = router

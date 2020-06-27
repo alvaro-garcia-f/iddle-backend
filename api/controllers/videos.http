@@ -1,4 +1,5 @@
 @base_url = http://localhost:3000/api/videos
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R2aWRAdGVzdC5jb20iLCJpYXQiOjE1OTMyNTgwMzl9.3lzaD5eDmakat6hrpKy297SygSa9DVyNJxEOLsGmqjg
 
 ###
 //watch a video - get('/:videoId', getVideo)
@@ -14,7 +15,7 @@ GET {{base_url}}/level/newbie HTTP/1.1
 
 ###
 // '/search/:term'
-GET {{base_url}}/search/un HTTP/1.1
+GET {{base_url}}/search/test%20vida HTTP/1.1
 
 ###
 // list video comments - get('/:videoId/comments', listVideoComments)
@@ -24,6 +25,7 @@ GET {{base_url}}/5ef61fb985def66d8f6b2143/comments HTTP/1.1
 //create a video - post('/me', uploadVideo)
 POST {{base_url}}/me HTTP/1.1
 Content-Type: application/json
+token: {{token}}
 
 {
   "title": "Sabado test!",

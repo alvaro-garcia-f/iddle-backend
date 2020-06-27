@@ -38,9 +38,13 @@ function listVideoComments (req, res) {
 }
 
 function uploadVideo (req, res) {
+  const info = req.body
+  info.author = res.locals.user._id
   VideoModel
-    .create(req.body)
-    .then(response => { res.json(response) })
+    .create(info)
+    .then(response => {
+      res.json(response)
+    })
     .catch(err => console.error(err))
 }
 
