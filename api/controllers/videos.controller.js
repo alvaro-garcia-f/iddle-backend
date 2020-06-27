@@ -73,10 +73,10 @@ function increaseVideoLikes (req, res) {
   VideoModel
     .findById(req.params.videoId)
     .then(video => {
-      if (video.likes.includes(req.body.userId)) {
-        video.likes.remove(req.body.userId)
+      if (video.likes.includes(res.locals.user._id)) {
+        video.likes.remove(res.locals.user._id)
       } else {
-        video.likes.push(req.body.userId)
+        video.likes.push(res.locals.user._id)
       }
       video.save()
         .then(response => res.json(response))
