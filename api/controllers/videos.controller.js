@@ -97,7 +97,8 @@ function editVideoComment (req, res) {
     .findById(req.params.videoId)
     .then(video => {
       video.comments.forEach(comment => {
-        if (comment._id.toString() === req.params.commentId) {
+        console.log(comment.userId, res.locals.user._id)
+        if (comment._id.toString() === req.params.commentId && comment.userId.toString() === res.locals.user._id.toString()) {
           comment.text = req.body.text
         }
       })

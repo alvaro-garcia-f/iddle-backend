@@ -56,11 +56,12 @@ token: {{token}}
 
 ###
 //edit video comment - put('/me/:videoId/comments/:commentId', editVideoComment)
-PUT {{base_url}}/me/5ef61fb985def66d8f6b2143/comments/5ef6304455448b76c8b7ac73 HTTP/1.1
+PUT {{base_url}}/me/5ef732c7eaa7201937b840c7/comments/5ef734cda5769b1aab5e87e5 HTTP/1.1
 Content-Type: application/json
+token: {{token}}
 
 {
-  "text": "editando comment test"
+  "text": "editando comment test arreglado!!!!!!"
 }
 ###
 //increase video views - put('/:videoId/views', increaseVideoViews)
