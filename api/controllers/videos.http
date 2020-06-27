@@ -35,22 +35,22 @@ token: {{token}}
 }
 ###
 //add a video comment - post('/me/:videoId/comments', addVideoComment)
-POST {{base_url}}/me/5ef63ee15863d10ca4530089/comments HTTP/1.1
+POST {{base_url}}/me/5ef732c7eaa7201937b840c7/comments HTTP/1.1
 Content-Type: application/json
 token: {{token}}
 
 {
-  "userId": "5ef63e7b5863d10ca4530088",
-  "text": "alb comment test 3"
+  "text": "Token test with auth"
 }
 
 ###
 //edit video info - put('/me/:videoId', editVideoInfo)
-PUT {{base_url}}/me/5ef63ee15863d10ca4530089 HTTP/1.1
+PUT {{base_url}}/me/5ef732c7eaa7201937b840c7 HTTP/1.1
 Content-Type: application/json
+token: {{token}}
 
 {
-  "title": "alberto video 1 ahora es video 2",
+  "title": "El video edit funciona!",
   "duration": 25
 }
 

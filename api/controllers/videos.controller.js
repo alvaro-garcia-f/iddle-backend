@@ -64,7 +64,7 @@ function addVideoComment (req, res) {
 
 function editVideoInfo (req, res) {
   VideoModel
-    .findByIdAndUpdate(req.params.videoId, req.body, { new: true })
+    .update({ $and: [{ _id: req.params.videoId }, { author: res.locals.user._id }] }, req.body, { new: true })
     .then(response => { res.json(response) })
     .catch(err => console.error(err))
 }
