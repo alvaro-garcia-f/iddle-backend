@@ -54,6 +54,18 @@ Content-Type: application/json
 {
   "text": "editando comment test"
 }
+###
+//increase video views - put('/:videoId/views', increaseVideoViews)
+PUT {{base_url}}/5ef61fb985def66d8f6b2143/views HTTP/1.1
+
+###
+//increase video likes - put('/me/:videoId/likes', increaseVideoLike)
+PUT {{base_url}}/me/5ef61fb985def66d8f6b2143/likes HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": "5ef60862f4c9e84fe1a60f3f"
+}
 
 ###
 //delete a video - delete('/me/:videoId', deleteVideo)

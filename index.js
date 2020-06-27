@@ -13,7 +13,8 @@ mongoose.connect(process.env.MONGO_URL, {
   dbName: process.env.MONGO_DB,
   useNewUrlParser: true,
   useCreateIndex: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 },
 err => {
   if (err) { throw new Error(err) } else { console.info('💾 Connected to Mongo Database \n') }

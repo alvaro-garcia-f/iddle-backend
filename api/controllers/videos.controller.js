@@ -59,11 +59,26 @@ function editVideoInfo (req, res) {
 }
 
 function increaseVideoLikes (req, res) {
-
+  VideoModel
+    .findById(req.params.videoId)
+    .then(video => {
+      if (video.likes.includes(req.body.userId)) {
+        video.likes.remove(req.body.userId)
+      } else {
+        video.likes.push(req.body.userId)
+      }
+      video.save()
+        .then(response => res.json(response))
+        .catch(err => console.error(err))
+    })
+    .catch(err => console.error(err))
 }
 
 function increaseVideoViews (req, res) {
-
+  VideoModel
+    .findByIdAndUpdate(req.params.videoId, { $inc: { views: 1 } }, { new: true })
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
 }
 
 function editVideoComment (req, res) {
