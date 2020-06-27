@@ -97,7 +97,6 @@ function editVideoComment (req, res) {
     .findById(req.params.videoId)
     .then(video => {
       video.comments.forEach(comment => {
-        console.log(comment.userId, res.locals.user._id)
         if (comment._id.toString() === req.params.commentId && comment.userId.toString() === res.locals.user._id.toString()) {
           comment.text = req.body.text
         }
@@ -111,7 +110,7 @@ function editVideoComment (req, res) {
 
 function deleteVideo (req, res) {
   VideoModel
-    .findByIdAndDelete(req.params.videoId)
+    .remove({ $and: [{ _id: req.params.videoId }, { author: res.locals.user._id }] })
     .then(response => { res.json(response) })
     .catch(err => console.error(err))
 }

@@ -28,7 +28,7 @@ Content-Type: application/json
 token: {{token}}
 
 {
-  "title": "Token test with an author V2!",
+  "title": "Video to be deleted!!!!",
   "description": "es un test",
   "duration": 20,
   "level": "newbie"
@@ -79,7 +79,8 @@ Content-Type: application/json
 
 ###
 //delete a video - delete('/me/:videoId', deleteVideo)
-DELETE {{base_url}}/me/5ef7023d612e1884aaa6e667 HTTP/1.1
+DELETE {{base_url}}/me/5ef744a24edf6222f62e4007 HTTP/1.1
+token: {{token}}
 
 ###
 //delete video comment - delete('/me/:videoId/comments/:commentId', deleteVideoComment)
