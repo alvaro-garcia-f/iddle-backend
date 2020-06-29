@@ -5,6 +5,10 @@
 //watch a video - get('/:videoId', getVideo)
 GET {{base_url}}/5ef61fb985def66d8f6b2143 HTTP/1.1
 
+###  
+// get videos most watched - get('/most', getMostWatchedVideos)
+GET {{base_url}}/mostwatched
+
 ###
 //list videos by tech - get('/techs/:techId', listVideosByTech)
 GET {{base_url}}/techs/5ef6117d291db8ed03313e3b HTTP/1.1
