@@ -7,6 +7,14 @@ function getVideo (req, res) {
     .catch(err => console.error(err))
 }
 
+function getMostWatchedVideos (req, res) {
+  VideoModel
+    .find({}, null, { sort: { views: -1 } })
+    .limit(5)
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
 function listVideosByTech (req, res) {
   VideoModel
     .find({ techs: req.params.techId })
@@ -23,7 +31,6 @@ function listVideosByLevel (req, res) {
 }
 
 function listVideosBySearch (req, res) {
-  // '/search/:term'
   VideoModel
     .find({ $text: { $search: req.params.term } }, { score: { $meta: 'textScore' } })
     .then(response => res.json(response))
@@ -128,6 +135,7 @@ function deleteVideoComment (req, res) {
 
 module.exports = {
   getVideo,
+  getMostWatchedVideos,
   listVideosByTech,
   listVideosByLevel,
   listVideosBySearch,

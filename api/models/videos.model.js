@@ -18,6 +18,10 @@ const videoSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Title is required']
   },
+  url: {
+    type:String,
+    required: [true, "URL is required"]
+  },
   description: {
     type: String,
     required: [true, 'Description is required']

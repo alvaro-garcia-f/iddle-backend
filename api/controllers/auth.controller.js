@@ -2,15 +2,6 @@ const UserModel = require('../models/users.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-/* function handleError(err) {
-  if (err.response.data.error === 'Token not valid + TokenExpiredError: jwt expired') {
-    localStorage.clear();
-  } else {
-    alert(err.response.data.error)
-  }
-  console.log(err.errors.email.properties.message)
-} */
-
 function signUp (req, res) {
   const hashedPassword = bcrypt.hashSync(req.body.user_password, 10)
   UserModel
@@ -23,9 +14,7 @@ function signUp (req, res) {
       const token = jwt.sign(userData, process.env.SECRET)
       res.json({ token, ...userData })
     })
-    .catch(error => res.status(403).json({ error: error }))// error: error.errmsg
-  // handleError(error))
-  // console.log(error));
+    .catch(error => res.status(403).json({ error: error }))
 }
 
 function logIn (req, res) {

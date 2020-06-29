@@ -10,7 +10,6 @@ function getUserProfile (req, res) {
 
   // console.log(req.originalUrl)
 }
-
 function getOwnProfile (req, res) {
   UserModel
     .findById(res.locals.user._id)

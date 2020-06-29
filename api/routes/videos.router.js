@@ -3,6 +3,7 @@ const { authUser } = require('../utils')
 
 const {
   getVideo,
+  getMostWatchedVideos,
   listVideosByTech,
   listVideosByLevel,
   listVideosBySearch,
@@ -18,6 +19,7 @@ const {
 } = require('../controllers/videos.controller')
 
 router
+  .get('/mostwatched', getMostWatchedVideos)
   .get('/:videoId', getVideo)
   .get('/techs/:techId', listVideosByTech)
   .get('/level/:level', listVideosByLevel)

@@ -1,12 +1,10 @@
 const router = require('express').Router()
 
 const {
-  getAllTechs,
-  initialize
+  getAllTechs
 } = require('../controllers/techs.controller')
 
 router
   .get('/', getAllTechs)
-  .post('/init', initialize)
 
 module.exports = router
