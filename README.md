@@ -80,3 +80,10 @@
 | POST   | '/videos/me/:videoId/comments'            | YES  | Add video comment                        |
 | PUT    | '/videos/me/:videoId/comments/:commentId' | YES  | Edit video comment                       |
 | DELETE | '/videos/me/:videoId/comments/:commentId' | YES  | Delete a video comment                   |
+
+## TECH ENDPOINTS
+
+| METHOD | URL            | AUTH | FUNCTION               |
+|--------|----------------|------|------------------------|
+| GET    | '/techonogies' | NO   | List all techonologies |
+
