@@ -67,6 +67,7 @@
 
 | METHOD | URL                                       | AUTH | FUNCTION                                 |
 |--------|-------------------------------------------|------|------------------------------------------|
+| GET    | '/videos/mostwatched'.                    | NO   | List most watched videos                 |
 | GET    | '/videos/:videoId'.                       | NO   | Watch a video                            |
 | GET    | '/videos/technologies/:techId'            | NO   | List all videos of a specific technology |
 | GET    | '/videos/level/:levelId'                  | NO   | List all videos of a specific level      |
