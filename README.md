@@ -75,7 +75,7 @@
 | POST   | '/videos/me'                              | YES  | Upload a video                           |
 | PUT    | '/videos/me/:videoId'                     | YES  | Update video information                 |
 | PUT    | '/videos/me/:videoId/likes'               | YES  | Increase video likes                     |
-| PUT    | '/videos/me/:videoId/views'               | NO   | Increase video views                     |
+| PUT    | '/videos/:videoId/views'               | NO   | Increase video views                     |
 | DELETE | '/videos/me/:videoId'                     | YES  | Delete a video                           |
 | GET    | '/videos/:videoId/comments'               | NO   | List video comments                      |
 | POST   | '/videos/me/:videoId/comments'            | YES  | Add video comment                        |
