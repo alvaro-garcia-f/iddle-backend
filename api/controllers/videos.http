@@ -1,9 +1,9 @@
 @base_url = http://localhost:3000/api/videos
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmJkNTAzZTc5MzAwOWFiODE1NTk2OCIsImVtYWlsIjoiYWx2YXJvMkBhbHZhcm8uY29tIiwiaWF0IjoxNTkzNjE5MTcxLCJleHAiOjE1OTM2MjI3NzF9.fpBdj_YkRCivEaYMWan2pUqoUWCnthCIxAnTD2o21MA
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmJkNTAzZTc5MzAwOWFiODE1NTk2OCIsImVtYWlsIjoiYWx2YXJvMkBhbHZhcm8uY29tIiwiaWF0IjoxNTkzNjMwNTQ0LCJleHAiOjE1OTM2MzQxNDR9.OGFKng29z8OxCowO9PAI3Yi8K3BSXOmTZymD7m5EebM
 
 ###
 //watch a video - get('/:videoId', getVideo)
-GET {{base_url}}/5ef61fb985def66d8f6b2143 HTTP/1.1
+GET {{base_url}}/5efbde799241fb1f0fa8fbe7 HTTP/1.1
 
 ###  
 // get videos most watched - get('/most', getMostWatchedVideos)

@@ -4,6 +4,7 @@ function getVideo (req, res) {
   VideoModel
     .findById(req.params.videoId)
     .populate('author')
+    .populate('techs')
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
