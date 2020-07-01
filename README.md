@@ -69,13 +69,13 @@
 |--------|-------------------------------------------|------|------------------------------------------|
 | GET    | '/videos/mostwatched'.                    | NO   | List most watched videos                 |
 | GET    | '/videos/:videoId'.                       | NO   | Watch a video                            |
-| GET    | '/videos/technologies/:techId'            | NO   | List all videos of a specific technology |
+| GET    | '/videos/techs/:techId'                   | NO   | List all videos of a specific technology |
 | GET    | '/videos/level/:levelId'                  | NO   | List all videos of a specific level      |
 | GET    | '/videos/search/:term'                    | NO   | List all videos of a specific search     |
 | POST   | '/videos/me'                              | YES  | Upload a video                           |
 | PUT    | '/videos/me/:videoId'                     | YES  | Update video information                 |
 | PUT    | '/videos/me/:videoId/likes'               | YES  | Increase video likes                     |
-| PUT    | '/videos/:videoId/views'               | NO   | Increase video views                     |
+| PUT    | '/videos/:videoId/views'                  | NO   | Increase video views                     |
 | DELETE | '/videos/me/:videoId'                     | YES  | Delete a video                           |
 | GET    | '/videos/:videoId/comments'               | NO   | List video comments                      |
 | POST   | '/videos/me/:videoId/comments'            | YES  | Add video comment                        |
@@ -86,5 +86,5 @@
 
 | METHOD | URL            | AUTH | FUNCTION               |
 |--------|----------------|------|------------------------|
-| GET    | '/techonogies' | NO   | List all techonologies |
+| GET    | '/techs' | NO   | List all techonologies |
 
