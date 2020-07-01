@@ -86,5 +86,5 @@
 
 | METHOD | URL            | AUTH | FUNCTION               |
 |--------|----------------|------|------------------------|
-| GET    | '/techonogies' | NO   | List all techonologies |
+| GET    | '/techs' | NO   | List all techonologies |
 
