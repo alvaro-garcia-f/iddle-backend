@@ -23,7 +23,7 @@ GET {{base_url}}/search/test%20vida HTTP/1.1
 
 ###
 // list video comments - get('/:videoId/comments', listVideoComments)
-GET {{base_url}}/5efb1b61f707ebff5f788e33/comments HTTP/1.1
+GET {{base_url}}/5efbde799241fb1f0fa8fbe7/comments HTTP/1.1
 
 ###
 //create a video - post('/me', uploadVideo)

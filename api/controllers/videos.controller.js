@@ -3,6 +3,7 @@ const VideoModel = require('../models/videos.model')
 function getVideo (req, res) {
   VideoModel
     .findById(req.params.videoId)
+    .populate('author')
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
