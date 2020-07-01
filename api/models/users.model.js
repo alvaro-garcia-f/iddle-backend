@@ -1,13 +1,4 @@
 const mongoose = require('mongoose')
-// const validate = require('mongoose-validator')
-
-/* const emailValidator = [
-  validate({
-    validator: 'matches',
-    arguments: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-    message: 'Please type a valid email'
-  })
-] */
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -42,7 +33,7 @@ const userSchema = new mongoose.Schema({
   },
   videos: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'videos'
+    ref: 'video'
   }]
 })
 

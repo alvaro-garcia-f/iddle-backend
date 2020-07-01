@@ -1,18 +1,16 @@
 const UserModel = require('../models/users.model')
 
-// Review alll functions
+function getOwnProfile (req, res) {
+  UserModel
+    .findById(res.locals.user._id)
+    .populate('videos')
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
 
 function getUserProfile (req, res) {
   UserModel
     .findById(req.params.id)
-    .then(response => res.json(response))
-    .catch(err => console.error(err))
-
-  // console.log(req.originalUrl)
-}
-function getOwnProfile (req, res) {
-  UserModel
-    .findById(res.locals.user._id)
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
@@ -36,8 +34,8 @@ function deleteUserAccount (req, res) {
 }
 
 module.exports = {
-  getUserProfile,
   getOwnProfile,
+  getUserProfile,
   editOwnProfile,
   editPhoto,
   deleteUserAccount

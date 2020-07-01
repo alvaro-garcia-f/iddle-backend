@@ -2,8 +2,8 @@ const router = require('express').Router()
 const { authUser } = require('../utils')
 
 const {
-  getUserProfile,
   getOwnProfile,
+  getUserProfile,
   editOwnProfile,
   editPhoto,
   deleteUserAccount
