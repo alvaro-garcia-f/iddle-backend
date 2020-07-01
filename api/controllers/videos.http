@@ -1,5 +1,5 @@
 @base_url = http://localhost:3000/api/videos
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R2aWRAdGVzdC5jb20iLCJpYXQiOjE1OTMyNTgwMzl9.3lzaD5eDmakat6hrpKy297SygSa9DVyNJxEOLsGmqjg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmJkNTAzZTc5MzAwOWFiODE1NTk2OCIsImVtYWlsIjoiYWx2YXJvMkBhbHZhcm8uY29tIiwiaWF0IjoxNTkzNjE5MTcxLCJleHAiOjE1OTM2MjI3NzF9.fpBdj_YkRCivEaYMWan2pUqoUWCnthCIxAnTD2o21MA
 
 ###
 //watch a video - get('/:videoId', getVideo)
@@ -15,7 +15,7 @@ GET {{base_url}}/techs/5ef6117d291db8ed03313e3b HTTP/1.1
 
 ###
 //list videos by level - get('/level/:level', listVideosByLevel)
-GET {{base_url}}/level/newbie HTTP/1.1
+GET {{base_url}}/level/beginner HTTP/1.1
 
 ###
 // '/search/:term'
@@ -23,7 +23,7 @@ GET {{base_url}}/search/test%20vida HTTP/1.1
 
 ###
 // list video comments - get('/:videoId/comments', listVideoComments)
-GET {{base_url}}/5ef61fb985def66d8f6b2143/comments HTTP/1.1
+GET {{base_url}}/5efb1b61f707ebff5f788e33/comments HTTP/1.1
 
 ###
 //create a video - post('/me', uploadVideo)
@@ -39,12 +39,12 @@ token: {{token}}
 }
 ###
 //add a video comment - post('/me/:videoId/comments', addVideoComment)
-POST {{base_url}}/me/5ef732c7eaa7201937b840c7/comments HTTP/1.1
+POST {{base_url}}/me/5efb1b61f707ebff5f788e33/comments HTTP/1.1
 Content-Type: application/json
 token: {{token}}
 
 {
-  "text": "Comment to be deleted!!!"
+  "text": "Este vídeo me parece muy útil."
 }
 
 ###

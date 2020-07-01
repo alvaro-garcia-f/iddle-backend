@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 const commentSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users'
+    ref: 'user'
   },
   text: {
     type: String,
-    require: true,
     maxlength: [325, 'max character length allowed is 325'],
     minlength: [1, 'min character length allowed is 1']
   }
@@ -49,7 +48,7 @@ const videoSchema = new mongoose.Schema({
   level: {
     type: String,
     enum: ['beginner', 'intermediate', 'advanced'],
-    require: true
+    required: true
   },
   uploadDate: {
     type: Date,

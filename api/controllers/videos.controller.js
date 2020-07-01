@@ -40,6 +40,7 @@ function listVideosBySearch (req, res) {
 function listVideoComments (req, res) {
   VideoModel
     .findById(req.params.videoId)
+    .populate('comments.userId')
     .then(response => res.json(response.comments))
     .catch(err => console.error(err))
 }
