@@ -59,8 +59,11 @@ function uploadVideo (req, res) {
 }
 
 function addVideoComment (req, res) {
-  const info = req.body
-  info.userId = res.locals.user._id
+  let info = {
+    userId : res.locals.user._id,
+    text : req.body.text
+  }
+
   VideoModel
     .findById(req.params.videoId)
     .then(response => {
