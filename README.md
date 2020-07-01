@@ -67,6 +67,7 @@
 
 | METHOD | URL                                       | AUTH | FUNCTION                                 |
 |--------|-------------------------------------------|------|------------------------------------------|
+| GET    | '/videos/mostwatched'.                    | NO   | List most watched videos                 |
 | GET    | '/videos/:videoId'.                       | NO   | Watch a video                            |
 | GET    | '/videos/technologies/:techId'            | NO   | List all videos of a specific technology |
 | GET    | '/videos/level/:levelId'                  | NO   | List all videos of a specific level      |
@@ -74,9 +75,16 @@
 | POST   | '/videos/me'                              | YES  | Upload a video                           |
 | PUT    | '/videos/me/:videoId'                     | YES  | Update video information                 |
 | PUT    | '/videos/me/:videoId/likes'               | YES  | Increase video likes                     |
-| PUT    | '/videos/me/:videoId/views'               | NO   | Increase video views                     |
+| PUT    | '/videos/:videoId/views'               | NO   | Increase video views                     |
 | DELETE | '/videos/me/:videoId'                     | YES  | Delete a video                           |
 | GET    | '/videos/:videoId/comments'               | NO   | List video comments                      |
 | POST   | '/videos/me/:videoId/comments'            | YES  | Add video comment                        |
 | PUT    | '/videos/me/:videoId/comments/:commentId' | YES  | Edit video comment                       |
 | DELETE | '/videos/me/:videoId/comments/:commentId' | YES  | Delete a video comment                   |
+
+## TECH ENDPOINTS
+
+| METHOD | URL            | AUTH | FUNCTION               |
+|--------|----------------|------|------------------------|
+| GET    | '/techonogies' | NO   | List all techonologies |
+
