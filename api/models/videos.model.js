@@ -48,7 +48,7 @@ const videoSchema = new mongoose.Schema({
   }],
   level: {
     type: String,
-    enum: ['newbie', 'beginner', 'intermediate', 'advance', 'expert'],
+    enum: ['beginner', 'intermediate', 'advanced'],
     require: true
   },
   uploadDate: {
