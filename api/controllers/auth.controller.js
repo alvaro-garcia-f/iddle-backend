@@ -6,6 +6,7 @@ function signUp (req, res) {
   const hashedPassword = bcrypt.hashSync(req.body.user_password, 10)
   UserModel
     .create({
+      username: req.body.user_username,
       email: req.body.user_email,
       password: hashedPassword
     })

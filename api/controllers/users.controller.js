@@ -3,7 +3,7 @@ const UserModel = require('../models/users.model')
 function getOwnProfile (req, res) {
   UserModel
     .findById(res.locals.user._id)
-    .populate('videos')
+    .populate('videos')         
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
