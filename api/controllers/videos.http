@@ -1,11 +1,11 @@
 @base_url = http://localhost:3000/api/videos
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmJkNTAzZTc5MzAwOWFiODE1NTk2OCIsImVtYWlsIjoiYWx2YXJvMkBhbHZhcm8uY29tIiwiaWF0IjoxNTkzNjMwNTQ0LCJleHAiOjE1OTM2MzQxNDR9.OGFKng29z8OxCowO9PAI3Yi8K3BSXOmTZymD7m5EebM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmRjNjc3MTI5MDM3ZjA0YWFkY2I2YiIsImVtYWlsIjoibGl0b0B0ZXN0LmNvbSIsImlhdCI6MTU5MzY4OTcxOX0.1-lj-AurQJSqPq8P7xZZgs3L3zIOEifv2mpRvpucZ6E
 
 ###
 //watch a video - get('/:videoId', getVideo)
 GET {{base_url}}/5efbde799241fb1f0fa8fbe7 HTTP/1.1
 
-###  
+###
 // get videos most watched - get('/most', getMostWatchedVideos)
 GET {{base_url}}/mostwatched
 
@@ -35,7 +35,8 @@ token: {{token}}
   "title": "Video to be deleted!!!!",
   "description": "es un test",
   "duration": 20,
-  "level": "newbie"
+  "level": "Beginner",
+  "url": "https://www.youtube.com/embed/UB1O30fR-EE"
 }
 ###
 //add a video comment - post('/me/:videoId/comments', addVideoComment)

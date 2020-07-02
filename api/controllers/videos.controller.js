@@ -1,4 +1,5 @@
 const VideoModel = require('../models/videos.model')
+const UserModel = require('../models/users.model')
 
 function getVideo (req, res) {
   VideoModel
@@ -53,16 +54,23 @@ function uploadVideo (req, res) {
   console.log(info)
   VideoModel
     .create(info)
-    .then(response => {
-      res.json(response)
+    .then(video => {
+      UserModel
+        .findById(info.author)
+        .then(response => {
+          response.videos.push(video._id)
+          response.save()
+        })
+        .catch(err => console.error(err))
+      res.json(video)
     })
     .catch(err => console.error(err))
 }
 
 function addVideoComment (req, res) {
-  let info = {
-    userId : res.locals.user._id,
-    text : req.body.text
+  const info = {
+    userId: res.locals.user._id,
+    text: req.body.text
   }
 
   VideoModel
