@@ -1,5 +1,6 @@
 const VideoModel = require('../models/videos.model')
 const UserModel = require('../models/users.model')
+const mongoose = require('mongoose')
 
 function getVideo (req, res) {
   VideoModel
@@ -49,6 +50,7 @@ function listVideoComments (req, res) {
 }
 
 function uploadVideo (req, res) {
+  req.body.techs = req.body.techs.map(t => mongoose.Types.ObjectId(t))
   const info = req.body
   info.author = res.locals.user._id
   console.log(info)
