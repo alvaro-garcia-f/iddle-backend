@@ -36,7 +36,6 @@ function logIn (req, res) {
 }
 
 function myId (req, res)  {
-    console.log(res.locals.user)
     res.json({ id: res.locals.user._id })
 }
 
