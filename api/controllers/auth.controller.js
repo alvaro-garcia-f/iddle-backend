@@ -11,7 +11,7 @@ function signUp (req, res) {
       password: hashedPassword
     })
     .then(user => {
-      const userData = { id: user._id, email: user.email }
+      const userData = { email: user.email }
       const token = jwt.sign(userData, process.env.SECRET)
       res.json({ token, ...userData })
     })
@@ -24,7 +24,7 @@ function logIn (req, res) {
     .then(user => {
       if (!user) { res.json({ error: 'Your email and/or password are incorrect!' }) } else {
         if (bcrypt.compareSync(req.body.user_password, user.password)) {
-          const userData = { id: user._id, email: user.email }
+          const userData = { email: user.email }
           const token = jwt.sign(userData, process.env.SECRET, { expiresIn: '1h' })
           res.json({ token, ...userData })
         } else {
