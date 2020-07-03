@@ -15,6 +15,8 @@ function getMostWatchedVideos (req, res) {
   VideoModel
     .find({}, null, { sort: { views: -1 } })
     .limit(5)
+    .populate('author')
+    .populate('techs')
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
@@ -22,6 +24,7 @@ function getMostWatchedVideos (req, res) {
 function listVideosByTech (req, res) {
   VideoModel
     .find({ techs: req.params.techId })
+    .populate('author')
     .populate('techs')
     .then(videos => res.json(videos))
     .catch(err => console.error(err))
