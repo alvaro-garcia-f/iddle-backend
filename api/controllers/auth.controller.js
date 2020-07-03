@@ -35,4 +35,9 @@ function logIn (req, res) {
     .catch(error => res.status(403).json({ error: error.errmsg }))
 }
 
-module.exports = { signUp, logIn }
+function myId (req, res)  {
+    console.log(res.locals.user)
+    res.json({ id: res.locals.user._id })
+}
+
+module.exports = { signUp, logIn, myId }

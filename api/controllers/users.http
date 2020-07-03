@@ -1,11 +1,16 @@
 @base_url = http://localhost:3000/api
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmJkNTAzZTc5MzAwOWFiODE1NTk2OCIsImVtYWlsIjoiYWx2YXJvMkBhbHZhcm8uY29tIiwiaWF0IjoxNTkzNjkxNjkyLCJleHAiOjE1OTM2OTUyOTJ9.WKfJFjhADltbzkWHfnw8xqJGyXfSAjcpno8pQCx77xg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmVmYmFlMzFiNjM3N2U5NzM3Mzc2MiIsImVtYWlsIjoidG9uaUBzb3ByYW5vLmNvbSIsImlhdCI6MTU5Mzc2ODg3OH0.5paMMz6clR3qGpNL99n81L2jBsFsMkmZVqH3HVZQboI
 
 // CHECKING USER ROUTES
 
 GET {{base_url}}/users/me HTTP/1.1
 token: {{token}}
+###
+
+GET {{base_url}}/auth/me HTTP/1.1
+token: {{token}}
+
 ###
 
 GET {{base_url}}/users/5ef607f0f4c9e84fe1a60f3d HTTP/1.1
