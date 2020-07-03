@@ -33,6 +33,8 @@ function listVideosByTech (req, res) {
 function listVideosByLevel (req, res) {
   VideoModel
     .find({ level: req.params.level })
+    .populate('author')
+    .populate('techs')
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
@@ -40,6 +42,8 @@ function listVideosByLevel (req, res) {
 function listVideosBySearch (req, res) {
   VideoModel
     .find({ $text: { $search: req.params.term } }, { score: { $meta: 'textScore' } })
+    .populate('author')
+    .populate('techs')
     .then(response => res.json(response))
     .catch(err => console.error(err))
 }
