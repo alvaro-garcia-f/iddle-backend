@@ -2,6 +2,26 @@ const VideoModel = require('../models/videos.model')
 const UserModel = require('../models/users.model')
 const mongoose = require('mongoose')
 
+function listAllVideos (req, res) {
+  VideoModel
+    .find()
+    .populate('author')
+    .populate('techs')
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
+function latestVideos (req, res) {
+  VideoModel
+    .find()
+    .sort({uploadDate: 'desc'})
+    .limit(5)
+    .populate('author')
+    .populate('techs')
+    .then(response => res.json(response))
+    .catch(err => console.error(err))
+}
+
 function getVideo (req, res) {
   VideoModel
     .findById(req.params.videoId)
@@ -158,6 +178,8 @@ function deleteVideoComment (req, res) {
 }
 
 module.exports = {
+  listAllVideos,
+  latestVideos,
   getVideo,
   getMostWatchedVideos,
   listVideosByTech,

@@ -2,6 +2,8 @@ const router = require('express').Router()
 const { authUser } = require('../utils')
 
 const {
+  listAllVideos,
+  latestVideos,
   getVideo,
   getMostWatchedVideos,
   listVideosByTech,
@@ -19,6 +21,8 @@ const {
 } = require('../controllers/videos.controller')
 
 router
+  .get('/', listAllVideos)
+  .get('/date', latestVideos)
   .get('/mostwatched', getMostWatchedVideos)
   .get('/:videoId', getVideo)
   .get('/techs/:techId', listVideosByTech)

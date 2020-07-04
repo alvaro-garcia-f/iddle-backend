@@ -95,7 +95,7 @@ token: {{token}}
 // CHECKING USER ROUTES
 
 ###
-GET {{base_url}}/ HTTP/1.1
+GET {{base_url}} HTTP/1.1
 
 ###
 GET {{base_url}}/techs/121 HTTP/1.1
