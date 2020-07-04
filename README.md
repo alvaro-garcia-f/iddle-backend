@@ -1,4 +1,24 @@
-# iddle-backend
+# IDDLE 
+## DESCRIPTION
+Iddle is a tech oriented video streaming platform, focused on offering easy to find, useful and straight to the point content.
+
+In this repo you can find the back-end of the project. 
+
+Front-end: https://github.com/alvaro-garcia-f/Iddle
+
+Demo: https://alvaro-garcia-f.github.io/Iddle/my-profile.html
+
+## TEAM
+
+Iddle has been developed by:
+
+Alberto Merino: https://github.com/albmg
+Álvaro García: https://github.com/alvaro-garcia-f
+Carlos Artiles: https://github.com/cartiles0
+
+## PROJECT SETUP
+
+`npm install`
 
 # DB SCHEMAS
 
