@@ -104,7 +104,8 @@ Carlos Artiles: https://github.com/cartiles0
 
 ## TECH ENDPOINTS
 
-| METHOD | URL            | AUTH | FUNCTION               |
-|--------|----------------|------|------------------------|
-| GET    | '/techs' | NO   | List all techonologies |
+| METHOD | URL                   | AUTH | FUNCTION                                 |
+|--------|-----------------------|------|------------------------------------------|
+| GET    | '/techs'              | NO   | List all techonologies                   |
+| POST   | '/techs/:techId/click | NO   | Increases a technology amount of clicks  |
 
